@@ -27317,7 +27317,8 @@ function ButtonDisplay() {
     const [buttonType, setButtonType] = (0, _react.useState)({
         type: "primary",
         danger: false,
-        ghost: false
+        ghost: false,
+        size: "large"
     });
     const types = [
         "primary",
@@ -27325,32 +27326,40 @@ function ButtonDisplay() {
         "dashed",
         "text"
     ];
+    const sizes = [
+        "large",
+        "small",
+        "middle"
+    ];
     const boolOptions = [
         true,
         false
     ];
-    const randomTypeNumber = Math.floor(Math.random() * 4);
+    const randomTypeNumber = Math.floor(Math.random() * 5);
     const randomBoolNumber = Math.floor(Math.random() * 2);
+    const randomSizeNumber = Math.floor(Math.random() * 3);
     function handleOnButtonClick() {
         setButtonType({
             type: types[randomTypeNumber],
             danger: boolOptions[randomBoolNumber],
-            ghost: boolOptions[randomBoolNumber]
+            ghost: boolOptions[randomBoolNumber],
+            size: sizes[randomSizeNumber]
         });
     }
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _antd.Button), {
         onClick: handleOnButtonClick,
+        size: buttonType.size,
         type: buttonType.type,
         danger: buttonType.danger,
         ghost: buttonType.ghost,
         children: "this is a dynamic button"
     }, void 0, false, {
         fileName: "src/components/Button/index.jsx",
-        lineNumber: 16,
+        lineNumber: 18,
         columnNumber: 9
     }, this);
 }
-_s(ButtonDisplay, "LQ7am/F4PbbKcCwV7P/Oo6G2/0Y=");
+_s(ButtonDisplay, "vlrrqm0BjwBuFyaDg3etTfX7oaI=");
 _c = ButtonDisplay;
 var _c;
 $RefreshReg$(_c, "ButtonDisplay");
